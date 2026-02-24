@@ -11,6 +11,7 @@ public class FullscreenManager : MonoBehaviour
     public GameObject PC;
     public GameObject Arrow;
     public GameObject player;
+    public WaypointSystem waypointSystem; // Reference to WaypointSystem to start the game
 
     private bool hasStarted = false;
 
@@ -30,33 +31,38 @@ public class FullscreenManager : MonoBehaviour
 
     void Update()
     {
+        // Don't interfere if already started
+        if (hasStarted)
+        {
+            return;
+        }
+        
         // If fullscreen is lost (e.g. ESC pressed), show overlay again
-        if (!Screen.fullScreen)
+        if (!Screen.fullScreen && !hasStarted)
         {
             ShowOverlay();
-        }
-        else
-        {
-            ShowLoadingThenStart();
         }
     }
 
     public void OnUserTap()
     {
+        // Prevent multiple taps
+        if (hasStarted)
+        {
+            return;
+        }
+        
         // This MUST be directly inside a UI event (like a button)
+        hasStarted = true;
+        
         if (!Screen.fullScreen)
         {
             // Set immediately on user input — not in coroutine
             Screen.fullScreen = true;
-            hasStarted = true;
+        }
 
-            // Assume fullscreen will succeed; let Unity handle failure silently
-            ShowLoadingThenStart();
-        }
-        else
-        {
-            ShowLoadingThenStart();
-        }
+        // Start the game regardless of fullscreen status (for testing in editor)
+        ShowLoadingThenStart();
     }
 
     private void ShowLoadingThenStart()
@@ -70,6 +76,21 @@ public class FullscreenManager : MonoBehaviour
     {
         LoadingLabel.gameObject.SetActive(false);
         overlayUI.SetActive(false);
+        
+        // Start the actual game
+        if (waypointSystem != null)
+        {
+            waypointSystem.ActualStart(true); // true = mobile mode
+        }
+        else if (player != null)
+        {
+            // Fallback: try to find WaypointSystem on player
+            WaypointSystem ws = player.GetComponent<WaypointSystem>();
+            if (ws != null)
+            {
+                ws.ActualStart(true);
+            }
+        }
     }
 
     private void ShowOverlay()

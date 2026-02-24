@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 547a3a5865c201e42b933cbf702a40ba
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 318201
+  packageName: Animated low poly robot free - Stylized Sci-Fi Character
+  packageVersion: 1.0
+  assetPath: Assets/FreeLowPolyRobot/Scripts/ModularRobotRandomizer.cs
+  uploadId: 751494

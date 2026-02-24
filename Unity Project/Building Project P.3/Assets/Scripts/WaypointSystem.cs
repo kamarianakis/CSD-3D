@@ -39,6 +39,10 @@ public class WaypointSystem : MonoBehaviour
     public string axis;
     public GameObject Game;
 
+    [Header("NPC Interaction")]
+    public bool NPCInteractionEnabled = true;
+    public NPCInteractionDetector npcDetector;
+
     private bool EbeingAbledToUse = true;
     public bool XbeingAbledToUse = false;
     private GameObject forwintersummer;
@@ -253,6 +257,12 @@ public class WaypointSystem : MonoBehaviour
         ChangeDevice.SetActive(true);
 
         latestMenu = MainMenuButtons;
+        
+        // Clear any selected UI element so game keys work from the start
+        if (UnityEngine.EventSystems.EventSystem.current != null)
+        {
+            UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
+        }
     }
 
     private bool once = true;
@@ -327,15 +337,35 @@ public class WaypointSystem : MonoBehaviour
     {
         if (mobileusage == false)
         {
-            //If a user presses the letter 'E' on their keyboard, which is the button that turns on the menu, 
-            //and if they are allowed to do so [based on what they're doing at the moment(EbeingAbledToUse)], the following condition is met
-            if (Input.GetKeyDown(KeyCode.E) && (EbeingAbledToUse == true))
+            // Skip game input handling if a UI element is focused (e.g., typing in chat input field)
+            // This prevents E, H, M, etc. from triggering game actions while the user is typing
+            if (UnityEngine.EventSystems.EventSystem.current != null && 
+                UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject != null)
             {
-                //The script handling the MiniGame is turned off as it causes problems when the menu is open
-                Game.GetComponent<ItemCollector>().enabled = false;
+                return;
+            }
+            
+            //If a user presses the letter 'E' on their keyboard
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                //Check for NPC interaction first (takes priority over menu)
+                if (NPCInteractionEnabled && npcDetector != null && npcDetector.CanInteract())
+                {
+                    //NPC interaction is available, let NPCInteractionDetector handle it
+                    npcDetector.OnInteract();
+                    return; //Don't proceed to menu toggle
+                }
+                
+                //If no NPC interaction, proceed with original menu toggle
+                //and if they are allowed to do so [based on what they're doing at the moment(EbeingAbledToUse)], the following condition is met
+                if (EbeingAbledToUse == true)
+                {
+                    //The script handling the MiniGame is turned off as it causes problems when the menu is open
+                    Game.GetComponent<ItemCollector>().enabled = false;
 
-                //And the function 'ToggleNavigationMode()' handling the opening of the menu of functionalities is called
-                ToggleNavigationMode();
+                    //And the function 'ToggleNavigationMode()' handling the opening of the menu of functionalities is called
+                    ToggleNavigationMode();
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.C) && (CbeingAbledToUse == true))
@@ -944,6 +974,12 @@ public class WaypointSystem : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            
+            // Clear UI selection so game keys work again (prevents buttons staying selected)
+            if (UnityEngine.EventSystems.EventSystem.current != null)
+            {
+                UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
+            }
         }
 
         //The button 'E', which turnes on the main menu, is available to use again

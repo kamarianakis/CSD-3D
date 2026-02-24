@@ -22,6 +22,9 @@
 .idea/
 .vs/
 
+# Version control
+.plastic/
+
 # OS files
 .DS_Store
 Thumbs.db

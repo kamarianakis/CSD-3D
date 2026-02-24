@@ -1,0 +1,1069 @@
+{
+    "graduation_requirements": {
+        "total_ects": 240,
+        "min_semesters": 8,
+        "core_courses_required": true,
+        "specialization_ects": {
+            "minimum": 42,
+            "from_categories": [
+                "A1",
+                "A2",
+                "A3",
+                "A4",
+                "B1",
+                "B2",
+                "B3",
+                "B4",
+                "C1",
+                "C2",
+                "C3",
+                "C4"
+            ],
+            "constraints": [
+                "Τουλάχιστον 1 μάθημα από κάθε γενική κατηγορία (Α, Β, C)",
+                "Το πολύ 4 μαθήματα από την ίδια γενική κατηγορία"
+            ]
+        },
+        "e1_e2_requirements": {
+            "min_courses": 3,
+            "min_ects": 20,
+            "min_from_e1": 2,
+            "max_from_e2": 1
+        },
+        "free_elective_ects": 6
+    },
+    "categories": {
+        "ΚΟΡΜΟΣ": {
+            "name": "Μαθήματα Κορμού",
+            "description": "Υποχρεωτικά μαθήματα για όλους τους φοιτητές"
+        },
+        "E1": {
+            "name": "Μαθήματα Επιλογής Μαθηματικών και Φυσικών Επιστημών",
+            "description": "Μαθήματα από Τμήματα Μαθηματικών και Φυσικής"
+        },
+        "E2": {
+            "name": "Μαθήματα Επιλογής άλλων Επιστημών",
+            "description": "Μαθήματα από άλλα τμήματα (Βιολογία, Οικονομικά, κλπ)"
+        },
+        "A1": {
+            "name": "Αρχιτεκτονική υπολογιστών και μικρο-ηλεκτρονική",
+            "general_category": "Α",
+            "general_name": "Υπολογιστικές υποδομές"
+        },
+        "A2": {
+            "name": "Συστήματα υπολογιστών και παράλληλα υπολογιστικά συστήματα",
+            "general_category": "Α",
+            "general_name": "Υπολογιστικές υποδομές"
+        },
+        "A3": {
+            "name": "Ασφάλεια υπολογιστών και κατανεμημένα συστήματα",
+            "general_category": "Α",
+            "general_name": "Υπολογιστικές υποδομές"
+        },
+        "A4": {
+            "name": "Δίκτυα υπολογιστών, κινητοί υπολογισμοί και τηλεπικοινωνίες",
+            "general_category": "Α",
+            "general_name": "Υπολογιστικές υποδομές"
+        },
+        "B1": {
+            "name": "Αλγοριθμική και ανάλυση συστημάτων",
+            "general_category": "Β",
+            "general_name": "Θεωρία, λογισμικό και δεδομένα"
+        },
+        "B2": {
+            "name": "Βάσεις δεδομένων, διαχείριση πληροφορίας και γνώσης",
+            "general_category": "Β",
+            "general_name": "Θεωρία, λογισμικό και δεδομένα"
+        },
+        "B3": {
+            "name": "Τεχνολογία λογισμικού και γλώσσες προγραμματισμού",
+            "general_category": "Β",
+            "general_name": "Θεωρία, λογισμικό και δεδομένα"
+        },
+        "B4": {
+            "name": "Τεχνητή νοημοσύνη και μηχανική μάθηση",
+            "general_category": "Β",
+            "general_name": "Θεωρία, λογισμικό και δεδομένα"
+        },
+        "C1": {
+            "name": "Επεξεργασία και ανάλυση σημάτων",
+            "general_category": "C",
+            "general_name": "Εφαρμογές"
+        },
+        "C2": {
+            "name": "Υπολογιστική όραση και ρομποτική",
+            "general_category": "C",
+            "general_name": "Εφαρμογές"
+        },
+        "C3": {
+            "name": "Γραφική και αλληλεπίδραση ανθρώπου-υπολογιστή",
+            "general_category": "C",
+            "general_name": "Εφαρμογές"
+        },
+        "C4": {
+            "name": "Βιοπληροφορική, ιατρική πληροφορική, υπολογιστικές νευροεπιστήμες",
+            "general_category": "C",
+            "general_name": "Εφαρμογές"
+        }
+    },
+    "courses": [
+        {
+            "code": "ΗΥ-100",
+            "name": "Εισαγωγή στην Επιστήμη Υπολογιστών",
+            "ects": 8,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 1,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-108",
+            "name": "Αγγλικά Ι",
+            "ects": 4,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 1,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-109",
+            "name": "Αγγλικά ΙΙ",
+            "ects": 4,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 2,
+            "prerequisites": [
+                "ΗΥ-108"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-110",
+            "name": "Απειροστικός Λογισμός Ι",
+            "ects": 8,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 1,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-118",
+            "name": "Διακριτά Μαθηματικά",
+            "ects": 6,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 2,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-119",
+            "name": "Γραμμική Άλγεβρα",
+            "ects": 6,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 2,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-120",
+            "name": "Ψηφιακή Σχεδίαση",
+            "ects": 8,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 1,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-150",
+            "name": "Προγραμματισμός",
+            "ects": 8,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 2,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-180",
+            "name": "Λογική",
+            "ects": 6,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 4,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-208",
+            "name": "Αγγλικά ΙΙΙ",
+            "ects": 4,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 3,
+            "prerequisites": [
+                "ΗΥ-109"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-209",
+            "name": "Αγγλικά IV",
+            "ects": 4,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 4,
+            "prerequisites": [
+                "ΗΥ-208"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-215",
+            "name": "Εφαρμοσμένα Μαθηματικά για Μηχανικούς",
+            "ects": 8,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 4,
+            "prerequisites": [
+                "ΗΥ-110"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-217",
+            "name": "Πιθανότητες",
+            "ects": 6,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 3,
+            "prerequisites": [
+                "ΗΥ-110"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-225",
+            "name": "Οργάνωση Υπολογιστών",
+            "ects": 8,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 4,
+            "prerequisites": [
+                "ΗΥ-120"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-240",
+            "name": "Δομές Δεδομένων",
+            "ects": 8,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 3,
+            "prerequisites": [
+                "ΗΥ-100",
+                "ΗΥ-150"
+            ],
+            "prerequisite_note": "ΗΥ-100 ή ΗΥ-150, (ΗΥ-118 προτεινόμενο)"
+        },
+        {
+            "code": "ΗΥ-252",
+            "name": "Αντικειμενοστρεφής Προγραμματισμός",
+            "ects": 8,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 3,
+            "prerequisites": [
+                "ΗΥ-100",
+                "ΗΥ-150"
+            ],
+            "prerequisite_note": "ΗΥ-100 ή ΗΥ-150"
+        },
+        {
+            "code": "ΗΥ-255",
+            "name": "Εργαστήριο Λογισμικού",
+            "ects": 6,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 4,
+            "prerequisites": [
+                "ΗΥ-100",
+                "ΗΥ-150"
+            ],
+            "prerequisite_note": "ΗΥ-100 ή ΗΥ-150"
+        },
+        {
+            "code": "ΗΥ-280",
+            "name": "Θεωρία Υπολογισμού",
+            "ects": 6,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 3,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-335",
+            "name": "Δίκτυα Υπολογιστών",
+            "ects": 6,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 5,
+            "prerequisites": [
+                "ΗΥ-118",
+                "ΗΥ-217"
+            ],
+            "prerequisite_note": "ΗΥ-118 ή ΗΥ-217"
+        },
+        {
+            "code": "ΗΥ-340",
+            "name": "Γλώσσες και Μεταφραστές",
+            "ects": 8,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 6,
+            "prerequisites": [
+                "ΗΥ-280",
+                "ΗΥ-240",
+                "ΗΥ-255"
+            ],
+            "prerequisite_note": "ΗΥ-280 ή ΗΥ-240 ή ΗΥ-255, (ΗΥ-225 προτεινόμενο)"
+        },
+        {
+            "code": "ΗΥ-345",
+            "name": "Λειτουργικά Συστήματα",
+            "ects": 8,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 5,
+            "prerequisites": [
+                "ΗΥ-240",
+                "ΗΥ-255"
+            ],
+            "prerequisite_note": "ΗΥ-240 ή ΗΥ-255, (ΗΥ-225 προτεινόμενο)"
+        },
+        {
+            "code": "ΗΥ-360",
+            "name": "Αρχεία και Βάσεις Δεδομένων",
+            "ects": 8,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 5,
+            "prerequisites": [
+                "ΗΥ-240",
+                "ΗΥ-255",
+                "ΗΥ-118",
+                "ΗΥ-180"
+            ],
+            "prerequisite_note": "(ΗΥ-240 ή ΗΥ-255) και (ΗΥ-118 ή ΗΥ-180)"
+        },
+        {
+            "code": "ΗΥ-380",
+            "name": "Αλγόριθμοι και Πολυπλοκότητα",
+            "ects": 8,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 6,
+            "prerequisites": [
+                "ΗΥ-118",
+                "ΗΥ-280",
+                "ΗΥ-240"
+            ],
+            "prerequisite_note": "(ΗΥ-118 ή ΗΥ-280) και ΗΥ-240"
+        },
+        {
+            "code": "ΗΥ-498",
+            "name": "Διπλωματική Εργασία",
+            "ects": 18,
+            "category": "ΚΟΡΜΟΣ",
+            "semester": 7,
+            "prerequisites": [],
+            "prerequisite_note": "Επιτυχία σε όλα τα μαθήματα κορμού των 4 πρώτων εξαμήνων"
+        },
+        {
+            "code": "ΗΥ-111",
+            "name": "Απειροστικός Λογισμός ΙΙ",
+            "ects": 6,
+            "category": "E1",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-110"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-112",
+            "name": "Φυσική Ι",
+            "ects": 8,
+            "category": "E1",
+            "semester": 1,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-113",
+            "name": "Φυσική ΙΙ",
+            "ects": 6,
+            "category": "E1",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-121",
+            "name": "Ηλεκτρικά Κυκλώματα",
+            "ects": 6,
+            "category": "E1",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-122",
+            "name": "Εισαγωγή στην Ηλεκτρονική",
+            "ects": 6,
+            "category": "E1",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-220",
+            "name": "Εργαστήριο Ψηφιακών Κυκλωμάτων",
+            "ects": 6,
+            "category": "A1",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-120"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-422",
+            "name": "Εισαγωγή στα Συστήματα VLSI",
+            "ects": 6,
+            "category": "A1",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-225"
+            ],
+            "prerequisite_note": "ΗΥ-225, (ΗΥ-121 προτεινόμενο)"
+        },
+        {
+            "code": "ΗΥ-425",
+            "name": "Αρχιτεκτονική Υπολογιστικών Συστημάτων",
+            "ects": 6,
+            "category": "A2",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-225"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-428",
+            "name": "Εργαστήριο Ενσωματωμένων Συστημάτων",
+            "ects": 6,
+            "category": "A2",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-255",
+                "ΗΥ-225"
+            ],
+            "prerequisite_note": "ΗΥ-255 ή ΗΥ-225"
+        },
+        {
+            "code": "ΗΥ-342",
+            "name": "Παράλληλος Προγραμματισμός",
+            "ects": 6,
+            "category": "A2",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-252",
+                "ΗΥ-255"
+            ],
+            "prerequisite_note": "ΗΥ-252 ή ΗΥ-255"
+        },
+        {
+            "code": "ΗΥ-455",
+            "name": "Εργαστήριο Διαδικτυακών Επιθέσεων και Αμυντικών Τεχνικών",
+            "ects": 6,
+            "category": "A3",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-335",
+                "ΗΥ-345"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-457",
+            "name": "Εισαγωγή στα Συστήματα Ασφάλειας Πληροφοριών",
+            "ects": 6,
+            "category": "A3",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-150"
+            ],
+            "prerequisite_note": "ΗΥ-150, (ΗΥ-345, ΗΥ-335 προτεινόμενα)"
+        },
+        {
+            "code": "ΗΥ-457.1",
+            "name": "Ψηφιακή Εγκληματολογία και Ασφάλεια",
+            "ects": 6,
+            "category": "A3",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-345"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-458",
+            "name": "Εισαγωγή στην Κρυπτογραφία",
+            "ects": 6,
+            "category": "A3",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-118",
+                "ΗΥ-240"
+            ],
+            "prerequisite_note": "ΗΥ-118, ΗΥ-240, (ΗΥ-345 προτεινόμενο)"
+        },
+        {
+            "code": "ΗΥ-330",
+            "name": "Εισαγωγή στη Θεωρία των Τηλεπικοινωνιακών Συστημάτων",
+            "ects": 6,
+            "category": "A4",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": "(ΗΥ-217, ΗΥ-215 προτεινόμενα)"
+        },
+        {
+            "code": "ΗΥ-435",
+            "name": "Εργαστήριο Τεχνολογίας και Προγραμματισμού Δικτύων Ι",
+            "ects": 6,
+            "category": "A4",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-335"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-436",
+            "name": "Δίκτυα Καθοριζόμενα από Λογισμικό",
+            "ects": 6,
+            "category": "A4",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-335"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-439",
+            "name": "Κινητά Υπολογιστικά Συστήματα",
+            "ects": 6,
+            "category": "A4",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-335"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-459",
+            "name": "Μέτρηση και Εποπτεία του Διαδικτύου",
+            "ects": 6,
+            "category": "A4",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-335"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-468",
+            "name": "Θεωρία Παιγνίων και Αποφάσεων σε Συστήματα Υπηρεσιών",
+            "ects": 6,
+            "category": "B1",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-217",
+                "ΗΥ-317"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-484",
+            "name": "Δυναμική Πολύπλοκων Δικτύων",
+            "ects": 6,
+            "category": "B1",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-118",
+                "ΗΥ-240"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-486",
+            "name": "Αρχές Κατανεμημένου Υπολογισμού",
+            "ects": 6,
+            "category": "B1",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-240"
+            ],
+            "prerequisite_note": "ΗΥ-240, (ΗΥ-225, ΗΥ-345, ΗΥ-380 προτεινόμενα)"
+        },
+        {
+            "code": "ΗΥ-351",
+            "name": "Ανάλυση και Σχεδίαση Πληροφοριακών Συστημάτων",
+            "ects": 6,
+            "category": "B2",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-252"
+            ],
+            "prerequisite_note": "ΗΥ-252, (ΗΥ-352, ΗΥ-360 προτεινόμενα)"
+        },
+        {
+            "code": "ΗΥ-452",
+            "name": "Εισαγωγή στην Επιστήμη και Τεχνολογία Υπηρεσιών",
+            "ects": 6,
+            "category": "B2",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-345",
+                "ΗΥ-360"
+            ],
+            "prerequisite_note": "ΗΥ-345, ΗΥ-360, (ΗΥ-359 προτεινόμενο)"
+        },
+        {
+            "code": "ΗΥ-460",
+            "name": "Συστήματα Διαχείρισης Βάσεων Δεδομένων",
+            "ects": 6,
+            "category": "B2",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-360"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-463",
+            "name": "Συστήματα Ανάκτησης Πληροφοριών",
+            "ects": 6,
+            "category": "B2",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-240"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-446",
+            "name": "Συστήματα Εκτέλεσης Δυναμικών Γλωσσών Προγραμματισμού",
+            "ects": 6,
+            "category": "B3",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-252",
+                "ΗΥ-345"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-352",
+            "name": "Τεχνολογία Λογισμικού",
+            "ects": 6,
+            "category": "B3",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-252",
+                "ΗΥ-150"
+            ],
+            "prerequisite_note": "ΗΥ-252 ή ΗΥ-150"
+        },
+        {
+            "code": "ΗΥ-359",
+            "name": "Διαδικτυοκεντρικός Προγραμματισμός",
+            "ects": 6,
+            "category": "B3",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-252"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-473",
+            "name": "Αναγνώριση Προτύπων",
+            "ects": 6,
+            "category": "B4",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-217",
+                "ΗΥ-119"
+            ],
+            "prerequisite_note": "ΗΥ-217, ΗΥ-119, (ΗΥ-215, ΗΥ-370 προτεινόμενα)"
+        },
+        {
+            "code": "ΗΥ-485",
+            "name": "Επιστήμη Δεδομένων και Εφαρμογές",
+            "ects": 6,
+            "category": "B4",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-119",
+                "ΗΥ-150",
+                "ΗΥ-217"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-487",
+            "name": "Εισαγωγή στην Τεχνητή Νοημοσύνη",
+            "ects": 6,
+            "category": "B4",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-240",
+                "ΗΥ-180"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-317",
+            "name": "Εφαρμοσμένες Στοχαστικές Διαδικασίες",
+            "ects": 6,
+            "category": "C1",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-217"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-370",
+            "name": "Ψηφιακή Επεξεργασία Σημάτων",
+            "ects": 6,
+            "category": "C1",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-215"
+            ],
+            "prerequisite_note": "ΗΥ-215, (ΗΥ-111 προτεινόμενο)"
+        },
+        {
+            "code": "ΗΥ-474",
+            "name": "Τεχνολογία Πολυμέσων",
+            "ects": 6,
+            "category": "C1",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-215"
+            ],
+            "prerequisite_note": "ΗΥ-215, (ΗΥ-370, ΗΥ-217 προτεινόμενα)"
+        },
+        {
+            "code": "ΗΥ-371",
+            "name": "Ψηφιακή Επεξεργασία Εικόνων",
+            "ects": 6,
+            "category": "C2",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-119"
+            ],
+            "prerequisite_note": "ΗΥ-119, (ΗΥ-110 προτεινόμενο)"
+        },
+        {
+            "code": "ΗΥ-471",
+            "name": "Ανάλυση Εικόνων",
+            "ects": 6,
+            "category": "C2",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-371"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-472",
+            "name": "Υπολογιστική Όραση",
+            "ects": 6,
+            "category": "C2",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-371"
+            ],
+            "prerequisite_note": "ΗΥ-371, (ΗΥ-471 προτεινόμενο)"
+        },
+        {
+            "code": "ΗΥ-475",
+            "name": "Αυτόνομη Ρομποτική Πλοήγηση",
+            "ects": 6,
+            "category": "C2",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-217",
+                "ΗΥ-119"
+            ],
+            "prerequisite_note": "ΗΥ-217, ΗΥ-119, (ΗΥ-471 προτεινόμενο)"
+        },
+        {
+            "code": "ΗΥ-358",
+            "name": "Γραφική",
+            "ects": 6,
+            "category": "C3",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-240"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-454",
+            "name": "Τεχνολογία Ανάπτυξης Έξυπνων Διεπαφών και Παιχνιδιών",
+            "ects": 6,
+            "category": "C3",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-255"
+            ],
+            "prerequisite_note": "ΗΥ-255, (ΗΥ-358 προτεινόμενο)"
+        },
+        {
+            "code": "ΗΥ-364",
+            "name": "Εισαγωγή στην Αλληλεπίδραση Ανθρώπου Υπολογιστή",
+            "ects": 6,
+            "category": "C3",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-150"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΗΥ-469",
+            "name": "Σύγχρονα Θέματα Αλληλεπίδρασης Ανθρώπου-Υπολογιστή",
+            "ects": 6,
+            "category": "C3",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-364"
+            ],
+            "prerequisite_note": "ΗΥ-364, (ΗΥ-359 προτεινόμενο)"
+        },
+        {
+            "code": "ΗΥ-482",
+            "name": "Αλγόριθμοι στην Βιοπληροφορική",
+            "ects": 6,
+            "category": "C4",
+            "semester": null,
+            "prerequisites": [
+                "ΗΥ-380",
+                "ΗΥ-217",
+                "ΗΥ-119"
+            ],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΒΙΟΛ-205",
+            "name": "Γενετική Ι",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΒΙΟΛ-207",
+            "name": "Μοριακή Βιολογία",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΒΙΟΛ-315",
+            "name": "Υπολογιστική Βιολογία",
+            "ects": 5,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΒΙΟΛ-405",
+            "name": "Εφαρμοσμένη Οικολογία και Διαχείριση Χερσαίων Οικοσυστημάτων",
+            "ects": 5,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΒΙΟΛ-476",
+            "name": "Ανάλυση Γενετικών Δεδομένων",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΕΤΥ-141",
+            "name": "Υλικά Ι: Εισαγωγή στην Επιστήμη Υλικών",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΕΤΥ-242",
+            "name": "Υλικά ΙΙΙ: Μικροηλεκτρονικά Οπτοηλεκτρονικά Υλικά",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΕΤΥ-494",
+            "name": "Εισαγωγή στην Βιοϊατρική Μηχανική",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": "Όπως στο Τμήμα Επιστήμης και Τεχνολογίας Υλικών"
+        },
+        {
+            "code": "ΜΕΜ-341",
+            "name": "Οικονομική Θεωρία Ι",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΜΕΜ-342",
+            "name": "Οικονομική Θεωρία ΙΙ",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΜΕΜ-343",
+            "name": "Επιχειρηματικότητα και Καινοτομία",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΜΕΜ-344",
+            "name": "Διεθνή Μαθηματικά",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΟΙΚ-1002",
+            "name": "Μακροοικονομική Θεωρία Ι",
+            "ects": 5.5,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": "Να επιλέγεται μόνο όταν δεν προσφέρεται το ΜΕΜ-342"
+        },
+        {
+            "code": "ΟΙΚ-1005",
+            "name": "Μικροοικονομική Θεωρία Ι",
+            "ects": 5.5,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": "Να επιλέγεται μόνο όταν δεν προσφέρεται το ΜΕΜ-342"
+        },
+        {
+            "code": "ΟΙΚ-2003",
+            "name": "Οικονομετρία Ι",
+            "ects": 5.5,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΣΘΕΤΕ-101",
+            "name": "Αρχές Οικονομίας",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΠΚ1003",
+            "name": "Επιχειρηματική Στρατηγική",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΠΚ1004",
+            "name": "Επιχειρηματική Αξιοποίηση Ερευνητικών Αποτελεσμάτων και Διανοητική Ιδιοκτησία",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΠΚ1005",
+            "name": "Εισαγωγή στη Ψυχολογία της Επιχειρηματικής Συμπεριφοράς",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΠΚ1006",
+            "name": "Στρατηγική Διοίκηση Νεοφυών Επιχειρήσεων",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        },
+        {
+            "code": "ΠΚ1007",
+            "name": "Κοινωνική Επιχειρηματικότητα",
+            "ects": 6,
+            "category": "E2",
+            "semester": null,
+            "prerequisites": [],
+            "prerequisite_note": null
+        }
+    ],
+    "thesis": {
+        "code": "ΗΥ-498",
+        "name": "Διπλωματική Εργασία",
+        "ects": 18,
+        "duration_semesters": [
+            1,
+            2
+        ],
+        "can_start_from_semester": 5,
+        "prerequisites": "Επιτυχία σε όλα τα μαθήματα κορμού των 4 πρώτων εξαμήνων",
+        "roles": {
+            "supervisor": "Επόπτης - μέλος ΔΕΠ ή ΕΔΙΠ, υπεύθυνος για ακαδημαϊκή ποιότητα",
+            "advisor": "Επιβλέπων - καθοδηγεί τον φοιτητή καθημερινά",
+            "committee": "Επιτροπή Παρακολούθησης/Αξιολόγησης (ΕΠΑ) - Επόπτης + Επιβλέπων + μέλος ΔΕΠ"
+        },
+        "process": [
+            "Επιλογή θέματος (συζητήσεις με ΔΕΠ/ΕΔΙΠ)",
+            "Δήλωση στη Γραμματεία (7η εβδομάδα εξαμήνου)",
+            "Εκπόνηση με περιοδική ενημέρωση ΕΠΑ",
+            "Υποβολή γραπτού κειμένου",
+            "Αξιολόγηση και βαθμολόγηση (0-10)"
+        ]
+    }
+}

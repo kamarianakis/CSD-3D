@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 971d4185d0d057844829515e6e8be1a0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 318201
+  packageName: Animated low poly robot free - Stylized Sci-Fi Character
+  packageVersion: 1.0
+  assetPath: Assets/FreeLowPolyRobot/Scripts/MatOffset.cs
+  uploadId: 751494
