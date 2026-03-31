@@ -1,0 +1,18 @@
+{
+    "events":[
+        {
+            "title": "CSD",
+            "location": "A-121",
+            "posterUrl": "Assets/StreamingAssets/Posters/poster2.jpg",
+            "bannerUrl": "Assets/StreamingAssets/Banners/banner1.jpg",
+            "eventWebsite": "https://csd.uoc.gr"
+        },
+        {
+            "title": "FuturEd AI Hackathon",
+            "location": "H-204",
+            "posterUrl": "Assets/StreamingAssets/Posters/poster1.jpg",
+            "bannerUrl": "Assets/StreamingAssets/Banners/banner1.jpg",
+            "eventWebsite": "https://hackathon.csd.uoc.gr/"
+        }
+    ]
+}

@@ -1,24 +1,33 @@
 /*This function handles the reading and assigning of the door names that float in front of the doors, from a online repository*/
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System.IO;
 using TMPro;
+using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class ExcelToCanvas : MonoBehaviour
 {
-    // ✅ PUBLIC REPOSITORY URL (No authentication needed)
-    private string githubRawUrl = "https://raw.githubusercontent.com/kamarianakis/CSD-3D/refs/heads/main/Excel%20Files/DoorNames.csv";
+    // ✅ PUBLIC REPOSITORY URL (No authentication needed) | or local file for testing
+    public string doorNameCSVURL = "https://raw.githubusercontent.com/kamarianakis/CSD-3D/refs/heads/main/Excel%20Files/DoorNames.csv";
+    public bool isLocalURL = false;
 
     void Start()
     {
-        StartCoroutine(DownloadCSV());
+        if (isLocalURL)
+        {
+            string csvData = LocalFileReader.LoadText(doorNameCSVURL);
+            ProcessCSV(csvData);
+        } else {
+            StartCoroutine(DownloadCSV());
+        }
     }
 
     IEnumerator DownloadCSV()
     {
 
-        UnityWebRequest request = UnityWebRequest.Get(githubRawUrl);
+        UnityWebRequest request = UnityWebRequest.Get(doorNameCSVURL);
 
         yield return request.SendWebRequest();
 
@@ -31,6 +40,19 @@ public class ExcelToCanvas : MonoBehaviour
             string csvData = request.downloadHandler.text;
             ProcessCSV(csvData);
         }
+    }
+
+    private GameObject FindFirstNotNull(params GameObject[] objects)
+    {
+        foreach (GameObject obj in objects)
+        {
+            if (obj != null)
+            {
+                return obj;
+            }
+        }
+
+        return null;
     }
 
     void ProcessCSV(string csvText)
@@ -65,9 +87,36 @@ public class ExcelToCanvas : MonoBehaviour
                 TextMeshProUGUI detailsTextMesh = canvas.transform.Find("Details")?.GetComponent<TextMeshProUGUI>();
                 TextMeshProUGUI extraInfoTextMesh = canvas.transform.Find("Extra Info")?.GetComponent<TextMeshProUGUI>();
 
+                GameObject imageAnchor = FindFirstNotNull(
+                    nameTextMesh != null ? nameTextMesh.gameObject : null,
+                    detailsTextMesh != null ? detailsTextMesh.gameObject : null,
+                    extraInfoTextMesh != null ? extraInfoTextMesh.gameObject : null
+                );
+
+                Transform imagePanel = canvas.transform.Find("Image");
+
+                // If there's no existing image create one (if there's a corresponding image to load).
+                if (imagePanel == null && imageAnchor != null && ImageIDAssetLoader.ExistsImageWithID(nameText))
+                {
+                    GameObject newImagePanelObj = Instantiate(new GameObject("Image"));
+                    newImagePanelObj.AddComponent<Image>();
+                    imagePanel = newImagePanelObj.transform;
+
+                    imagePanel.name = "Image";
+                    imagePanel.SetParent(canvas.transform);
+
+                    imagePanel.SetPositionAndRotation(
+                        imageAnchor.transform.position, 
+                        imageAnchor.transform.rotation
+                    );
+                }
+
+                Image itemImage = imagePanel != null ? imagePanel.GetComponent<Image>() : null;
+
                 if (nameTextMesh != null) nameTextMesh.text = nameText;
                 if (detailsTextMesh != null) detailsTextMesh.text = detailsText;
                 if (extraInfoTextMesh != null) extraInfoTextMesh.text = extraInfoText;
+                if (itemImage != null) ImageIDAssetLoader.SetImageByID(itemImage, nameText);
 
                 canvas.gameObject.SetActive(false);
             }

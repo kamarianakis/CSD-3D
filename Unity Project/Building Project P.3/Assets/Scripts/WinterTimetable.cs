@@ -346,6 +346,21 @@ public class WinterTimetable : MonoBehaviour
     It firsts starts with the winter semester panel and later with the spring semester panels*/
     void PopulateScrollView(List<string[]> data)
     {
+        void setWeekdayText(TMP_Text weekDayText, string field)
+        {
+            if (field != "")
+            {
+                string keyword = RoomFinder(field);
+                weekDayText.text = HighlightAndLink(field, keyword);
+                TMP_TextEventHandler textEventHandler = weekDayText.gameObject.AddComponent<TMP_TextEventHandler>();
+                textEventHandler.Setup(player, waypointObjects, panelToHide, weekDayText.text, 0);
+            }
+            else
+            {
+                weekDayText.text = field; // Regular text
+            }
+        }
+
         foreach (var fields in data)
         {
             GameObject newButton = Instantiate(templateButton, scrollContent);
@@ -365,76 +380,11 @@ public class WinterTimetable : MonoBehaviour
             if (openLinkScript) openLinkScript.url = fields[1];
             if (courseNameText) courseNameText.text = fields[2];
             if (professorsText) professorsText.text = fields[3];
-            if (mondayText)
-            {
-                if (fields[4] != "")
-                {
-                    string keyword = RoomFinder(fields[4]);
-                    mondayText.text = HighlightAndLink(fields[4], keyword);
-                    TMP_TextEventHandler textEventHandler = mondayText.gameObject.AddComponent<TMP_TextEventHandler>();
-                    textEventHandler.Setup(player, waypointObjects, panelToHide, mondayText.text, 0);
-                }
-                else
-                {
-                    mondayText.text = fields[4]; // Regular text
-                }
-            }
-            if (tuesdayText)
-            {
-                if (fields[5] != "")
-                {
-                    string keyword = RoomFinder(fields[5]);
-                    tuesdayText.text = HighlightAndLink(fields[5], keyword);
-                    TMP_TextEventHandler textEventHandler = tuesdayText.gameObject.AddComponent<TMP_TextEventHandler>();
-                    textEventHandler.Setup(player, waypointObjects, panelToHide, tuesdayText.text, 0);
-                }
-                else
-                {
-                    tuesdayText.text = fields[5]; // Regular text
-                }
-            }
-            if (wednesdayText)
-            {
-                if (fields[6] != "")
-                {
-                    string keyword = RoomFinder(fields[6]);
-                    wednesdayText.text = HighlightAndLink(fields[6], keyword);
-                    TMP_TextEventHandler textEventHandler = wednesdayText.gameObject.AddComponent<TMP_TextEventHandler>();
-                    textEventHandler.Setup(player, waypointObjects, panelToHide, wednesdayText.text, 0);
-                }
-                else
-                {
-                    wednesdayText.text = fields[6]; // Regular text
-                }
-            }
-            if (thursdayText)
-            {
-                if (fields[7] != "")
-                {
-                    string keyword = RoomFinder(fields[7]);
-                    thursdayText.text = HighlightAndLink(fields[7], keyword);
-                    TMP_TextEventHandler textEventHandler = thursdayText.gameObject.AddComponent<TMP_TextEventHandler>();
-                    textEventHandler.Setup(player, waypointObjects, panelToHide, thursdayText.text, 0);
-                }
-                else
-                {
-                    thursdayText.text = fields[7]; // Regular text
-                }
-            }
-            if (fridayText)
-            {
-                if (fields[8] != "")
-                {
-                    string keyword = RoomFinder(fields[8]);
-                    fridayText.text = HighlightAndLink(fields[8], keyword);
-                    TMP_TextEventHandler textEventHandler = fridayText.gameObject.AddComponent<TMP_TextEventHandler>();
-                    textEventHandler.Setup(player, waypointObjects, panelToHide, fridayText.text, 0);
-                }
-                else
-                {
-                    fridayText.text = fields[8]; // Regular text
-                }
-            }
+            if (mondayText) setWeekdayText(mondayText, fields[4]);
+            if (tuesdayText) setWeekdayText(tuesdayText, fields[5]);
+            if (wednesdayText) setWeekdayText(wednesdayText, fields[6]);
+            if (thursdayText) setWeekdayText(thursdayText, fields[7]);
+            if (fridayText) setWeekdayText(fridayText, fields[8]);
         }
     }
 

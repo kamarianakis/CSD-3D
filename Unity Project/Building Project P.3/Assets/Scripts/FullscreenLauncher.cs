@@ -16,7 +16,7 @@ public class FullscreenManager : MonoBehaviour
 
     void Start()
     {
-#if UNITY_WEBGL
+//#if UNITY_WEBGL
         if (Application.isMobilePlatform)
         {
             ShowOverlay();
@@ -25,7 +25,7 @@ public class FullscreenManager : MonoBehaviour
         {
             this.enabled = false; // disable fullscreen logic on desktop
         }
-#endif
+//#endif
     }
 
     void Update()

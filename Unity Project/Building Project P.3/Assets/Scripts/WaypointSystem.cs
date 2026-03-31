@@ -2780,6 +2780,13 @@ public class WaypointSystem : MonoBehaviour
     /*This function handles the cancelation of a destination navigation*/
     public void CancelNavigation()
     {
+        if(player.TryGetComponent<PlayerInfo>(out PlayerInfo playerInfo))
+        {
+            // Update the player info since the player is not navigating anymore,
+            // thus not using the exit feature.
+            playerInfo.SetExiting(false);
+        }
+
         Barriers.SetActive(false);
         Colliders.SetActive(false);
         specialobstacles.SetActive(false);

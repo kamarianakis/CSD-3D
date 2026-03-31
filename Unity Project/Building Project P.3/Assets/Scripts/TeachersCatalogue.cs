@@ -13,6 +13,8 @@ using UnityEngine.Networking; // Added for UnityWebRequest
 public class TeachersCatalogue : MonoBehaviour
 {
     public string teacherURL = "https://raw.githubusercontent.com/kamarianakis/CSD-3D/refs/heads/main/Excel%20Files/TeachersInfo.csv"; // GitHub CSV file URL
+    public bool isLocalURL = false;
+
     public GameObject templateButton; // The template button to clone
     public GameObject templateButton2; // The template button to clone
     public Transform scrollContent; // The content holder for scroll view
@@ -219,7 +221,15 @@ public class TeachersCatalogue : MonoBehaviour
     /*At start, a function is called to read all the data and assign it to the teacher panel*/
     void Start()
     {
-        StartCoroutine(LoadCSV(teacherURL)); // Use StartCoroutine to load CSV
+        if (isLocalURL)
+        {
+            string csvData = LocalFileReader.LoadText(teacherURL);
+            LoadFromCSV(csvData);
+        }
+        else
+        {
+            StartCoroutine(LoadCSV(teacherURL)); // Use StartCoroutine to load CSV
+        }
     }
 
     /*The function below handles the reading of the data of from the repository*/
@@ -235,8 +245,11 @@ public class TeachersCatalogue : MonoBehaviour
         }
 
         string csvData = request.downloadHandler.text; // Get the CSV text data
-        ParseCSV(csvData);
+        LoadFromCSV(csvData);
+    }
 
+    private void LoadFromCSV(string csvData) {
+        ParseCSV(csvData);
 
         void ParseCSV(string csvData)
         {
